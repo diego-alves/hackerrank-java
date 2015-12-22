@@ -6,7 +6,9 @@ apply plugin: "jacoco"
 
 repositories {
     mavenLocal()
-    jcenter()
+    jcenter {
+        url "http://jcenter.bintray.com/"
+    }
 }
 
 dependencies {
