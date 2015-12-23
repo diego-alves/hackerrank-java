@@ -19,38 +19,36 @@ public class JavaDatatypes {
             this.bits = bits;
         }
 
-        public boolean canBeFitted(long value){
-            double total = Math.pow(2, bits-1);
-            return value >= -total && value <= total -1;
+        public boolean canBeFitted(long value) {
+            double total = Math.pow(2, bits - 1);
+            return value >= -total && value <= total - 1;
         }
     }
 
 
     public static void main(String[] args) {
-
         Scanner sc = new Scanner(System.in);
-        int t=sc.nextInt();
+        int t = sc.nextInt();
+        JavaDatatypes javaDatatypes = new JavaDatatypes();
 
-        for(int i=0;i<t;i++)
-        {
+        for (int i = 0; i < t; i++) {
+            javaDatatypes.resolve(sc);
+        }
+    }
 
-            try
-            {
-                long x=sc.nextLong();
-                System.out.println(x+" can be fitted in:");
-                for (Type type : Type.values()) {
-                    if(type.canBeFitted(x)) {
-                        System.out.println("* " + type.name().toLowerCase() );
-                    }
+
+    private void resolve(Scanner sc) {
+        try {
+            long x = sc.nextLong();
+            System.out.println(x + " can be fitted in:");
+            for (Type type : Type.values()) {
+                if (type.canBeFitted(x)) {
+                    System.out.println("* " + type.name().toLowerCase());
                 }
             }
-            catch(Exception e)
-            {
-                System.out.println(sc.next()+" can't be fitted anywhere.");
-            }
-
+        } catch (Exception e) {
+            System.out.println(sc.next() + " can't be fitted anywhere.");
         }
-
 
     }
 }

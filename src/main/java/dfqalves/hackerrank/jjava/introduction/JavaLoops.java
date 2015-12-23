@@ -2,8 +2,6 @@ package dfqalves.hackerrank.jjava.introduction;
 
 import static java.lang.Math.pow;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 /**
