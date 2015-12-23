@@ -3,14 +3,36 @@ version '1.0-SNAPSHOT'
 
 apply plugin: 'java'
 apply plugin: "jacoco"
+apply plugin: 'com.github.kt3k.coveralls'
+
+buildscript {
+    repositories {
+        jcenter {
+            url "http://jcenter.bintray.com/"
+        }
+    }
+
+    dependencies {
+        classpath 'org.kt3k.gradle.plugin:coveralls-gradle-plugin:2.0.1'
+    }
+}
 
 repositories {
     mavenLocal()
-    jcenter()
+    jcenter {
+        url "http://jcenter.bintray.com/"
+    }
 }
 
 dependencies {
     testCompile 'org.testng:testng:6.9.10'
+}
+
+jacocoTestReport {
+    reports {
+        xml.enabled = true // coveralls plugin depends on xml format report
+        html.enabled = true
+    }
 }
 
 test {
