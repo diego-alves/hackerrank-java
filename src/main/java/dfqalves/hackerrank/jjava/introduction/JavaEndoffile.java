@@ -16,11 +16,15 @@ public class JavaEndoffile {
 
         Scanner sc = new Scanner(System.in);
 
+        new JavaEndoffile().resolve(sc);
+
+    }
+
+    private void resolve(Scanner sc) {
         int i = 1;
         while(sc.hasNextLine()) {
             System.out.println(i++ + " " + sc.nextLine());
         }
-
     }
 
 }

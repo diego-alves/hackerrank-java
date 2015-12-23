@@ -22,38 +22,29 @@ public class JavaLoops {
         Scanner sc = new Scanner(System.in);
 
         int t = sc.nextInt();
-        int[][] in = new int[t][3];
 
         for(int i = 0; i < t; i ++)
-            for(int j =
-                0; j < 3; j++)
-                in[i][j] = sc.nextInt();
+            new JavaLoops().resolve(sc);
 
-        for (int[] ints : resolve(in)) {
-            for (int anInt : ints) {
-                System.out.printf("%d ", anInt);
-            }
-            System.out.println();
-        }
     }
 
-    public static int[][] resolve(int[][] in) {
-        int r[][] = new int[in.length][];
+    private void resolve(Scanner sc) {
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+        int n = sc.nextInt();
 
-        for(int i = 0; i < in.length; i++) {
-            int a = in[i][A];
-            int b = in[i][B];
-            int n = in[i][N];
-            r[i] = new int[n];
+        int r = 0;
 
-            for (int j = 0; j < n; j++)
-                if(j == 0)
-                    r[i][j] = (int) (a + pow(2,j) * b);
-                else
-                    r[i][j] = (int) (r[i][j-1] + pow(2,j)*b);
-
+        for (int j = 0; j < n; j++) {
+            if(j == 0) {
+                r = (int) (a + pow(2, j) * b);
+                System.out.print(r + " ");
+            } else {
+                r = (int) (r + pow(2, j) * b);
+                System.out.print(r + " ");
+            }
         }
-        return r;
+        System.out.println("");
     }
 
 }
