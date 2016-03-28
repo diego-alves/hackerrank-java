@@ -1,9 +1,5 @@
 package dfqalves.hackerrank.algorithms.implementation;
 
-import dfqalves.hackerrank.jjava.introduction.JavaDatatypes;
-import org.hamcrest.MatcherAssert;
-import org.hamcrest.core.Is;
-import org.hamcrest.core.IsEqual;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -13,8 +9,8 @@ import java.io.PrintStream;
 import java.util.Scanner;
 
 import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.core.Is.is;
 import static org.hamcrest.core.IsEqual.equalTo;
-import static org.testng.Assert.*;
 
 /**
  * Created by diegoalves on 27/03/16.
@@ -42,7 +38,7 @@ public class AcmIcpcTeamTest {
 
         AcmIcpcTeam.main(null);
 
-        assertThat(out.toString(), equalTo("5\n2\n"));
+        assertThat(out.toString(), is(equalTo("5\n2\n")));
     }
 
     @Test
