@@ -9,6 +9,7 @@ import static dfqalves.hackerrank.algorithms.implementation.ModifiedKaprekarNumb
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
 
+
 /**
  * Created by cin_dalves on 3/29/16.
  */
