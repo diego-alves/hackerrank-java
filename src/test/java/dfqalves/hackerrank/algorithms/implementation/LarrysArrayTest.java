@@ -30,6 +30,15 @@ public class LarrysArrayTest {
     }
 
     @Test
+    public void testSort12354() throws Exception {
+        int[] arr = {1, 2, 3, 5, 4};
+        boolean sort = LarrysArray.sort(arr);
+        assertThat(sort, is(false));
+        assertThat(arr, is(equalTo(new int[]{2,1,3,4,5})));
+    }
+
+
+    @Test
     public void testSort12345() throws Exception {
         int[] arr = {1,2,3,5,4};
         boolean sort = LarrysArray.sort(arr);
