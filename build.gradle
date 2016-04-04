@@ -24,6 +24,9 @@ repositories {
     }
 }
 
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
 dependencies {
     testCompile 'org.testng:testng:6.9.10'
     testCompile 'org.hamcrest:hamcrest-all:1.3'
