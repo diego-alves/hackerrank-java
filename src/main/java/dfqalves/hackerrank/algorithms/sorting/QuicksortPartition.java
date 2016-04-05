@@ -15,7 +15,7 @@ public class QuicksortPartition {
         int[] arr = readArray();
         int p = arr[0];
 
-        String out = print(p, arr,
+        String out = divide(p, arr,
                 (p1, v1) -> v1 < p1,
                 (p1, v1) -> v1 == p1,
                 (p1, v1) -> v1 > p1
@@ -25,7 +25,7 @@ public class QuicksortPartition {
 
     }
 
-    static String print(int p, int[] arr, Oper... opers){
+    static String divide(int p, int[] arr, Oper... opers){
         StringBuilder sb = new StringBuilder();
 
         for(Oper oper : opers) {

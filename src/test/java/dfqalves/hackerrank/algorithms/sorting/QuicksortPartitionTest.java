@@ -14,7 +14,7 @@ public class QuicksortPartitionTest {
     public void testPrint() throws Exception {
         int[] in = {4,5,3,7,2};
 
-        String out = QuicksortPartition.print(4, in,
+        String out = QuicksortPartition.divide(4, in,
                 (p1, v1) -> v1 < p1,
                 (p1, v1) -> v1 == p1,
                 (p1, v1) -> v1 > p1
