@@ -20,7 +20,7 @@ public class JavaDatatypes {
         }
 
         public boolean canBeFitted(long value) {
-            double total = Math.pow(2, bits - 1);
+            double total = Math.pow(2, bits - 1d);
             return value >= -total && value <= total - 1;
         }
     }
@@ -48,6 +48,7 @@ public class JavaDatatypes {
             }
         } catch (Exception e) {
             System.out.println(sc.next() + " can't be fitted anywhere.");
+
         }
 
     }

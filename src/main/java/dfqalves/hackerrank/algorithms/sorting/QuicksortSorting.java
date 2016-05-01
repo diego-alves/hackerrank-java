@@ -62,7 +62,8 @@ public class QuicksortSorting {
         minor = sort(minor);
         major = sort(major);
 
-        Node out = (minor != null) ? minor.setNext(equal).setNext(major) : equal.setNext(major);
+        Node out;
+        out = minor != null ? minor.setNext(equal).setNext(major) : equal == null ? major : equal.setNext(major);
         System.out.println(out);
         return out;
 

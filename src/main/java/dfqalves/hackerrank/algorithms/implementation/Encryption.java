@@ -5,9 +5,11 @@ package dfqalves.hackerrank.algorithms.implementation;
  */
 public class Encryption {
 
+    private Encryption(){}
+
     static String encrypt(String text){
         Double sqrt = Math.sqrt(text.length());
-        int c = Long.valueOf(Math.round(sqrt)).intValue();
+        int c = (int) Math.round(sqrt);
         int r = sqrt > c ? c + 1 : c;
 
         StringBuilder sb = new StringBuilder();
@@ -19,7 +21,9 @@ public class Encryption {
                 sb.append(text.charAt(index));
             }
 
-            if(i + 1 != r) sb.append(" ");
+            if(i + 1 != r) {
+                sb.append(" ");
+            }
         }
 
         return sb.toString();
