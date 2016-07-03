@@ -2,9 +2,10 @@ group 'dfqalves'
 version '1.0-SNAPSHOT'
 
 apply plugin: 'java'
-apply plugin: "jacoco"
+apply plugin: 'jacoco'
+apply plugin: 'checkstyle'
 apply plugin: 'com.github.kt3k.coveralls'
-apply plugin: "org.sonarqube"
+apply plugin: 'org.sonarqube'
 
 buildscript {
     repositories {
@@ -42,6 +43,11 @@ jacocoTestReport {
         xml.enabled = true // coveralls plugin depends on xml format report
         html.enabled = true
     }
+}
+
+checkstyle {
+    configFile = new File(rootDir, "checkstyle.xml")
+    ignoreFailures = true
 }
 
 test {
