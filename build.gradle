@@ -48,6 +48,7 @@ jacocoTestReport {
 checkstyle {
     configFile = new File(rootDir, "checkstyle.xml")
     ignoreFailures = true
+    showViolations = false
 }
 
 test {
