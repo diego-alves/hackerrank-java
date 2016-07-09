@@ -51,5 +51,8 @@ checkstyle {
 }
 
 test {
+    if(project.hasProperty('ignoreTestFailures')) {
+        ignoreFailures = true
+    }
     useTestNG()
 }
