@@ -3,18 +3,17 @@ node {
     git url: 'git@github.com:diego-alves/hackerrank-java.git'
     
     def v = version()
-    echo "Build version $v"
+    echo    "Build version $v"
     
-    stage 'compile'
-    sh './gradlew clean build jacoco javadoc -PignoreTestFailures'
+    stage   'compile'
+    sh      './gradlew clean build jacoco javadoc -PignoreTestFailures'
     
-    stage 'Publish Test Results'
+    stage   'Publish Test Results'
     archive '**/build/libs/*.jar'
 
     step([$class: 'JUnitResultArchiver', testResults: '**/build/test-results/TEST-*.xml'])
     step([$class: 'hudson.plugins.checkstyle.CheckStylePublisher', pattern: '**/build/reports/checkstyle/*.xml'])
     step([$class: 'JavadocArchiver', javadocDir: 'build/docs/javadoc/'])
-    
     
 }
 
