@@ -6,10 +6,11 @@ node {
     echo "Build version $v"
     
     stage 'compile'
-    sh './gradlew clean build javadoc -PignoreTestFailures'
+    sh './gradlew clean build jacoco javadoc -PignoreTestFailures'
     
     stage 'Publish Test Results'
-    step([$class: 'ArtifactArchiver', artifacts: '**/build/libs/*.jar', fingerprint: true])
+    archive '**/build/libs/*.jar'
+
     step([$class: 'JUnitResultArchiver', testResults: '**/build/test-results/TEST-*.xml'])
     step([$class: 'hudson.plugins.checkstyle.CheckStylePublisher', pattern: '**/build/reports/checkstyle/*.xml'])
     step([$class: 'JavadocArchiver', javadocDir: 'build/docs/javadoc/'])
