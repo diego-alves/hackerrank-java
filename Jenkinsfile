@@ -9,7 +9,6 @@ node {
     archive '**/build/libs/*.jar'
 
     step([$class: 'JUnitResultArchiver', testResults: '**/build/test-results/TEST-*.xml'])
-    step([$class: 'hudson.plugins.checkstyle.CheckStylePublisher', pattern: '**/build/reports/checkstyle/*.xml'])
     step([$class: 'JavadocArchiver', javadocDir: 'build/docs/javadoc/'])
     
 }
