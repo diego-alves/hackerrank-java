@@ -1,11 +1,5 @@
 group 'dfqalves'
 
-apply plugin: 'java'
-apply plugin: 'jacoco'
-apply plugin: 'checkstyle'
-apply plugin: 'com.github.kt3k.coveralls'
-apply plugin: 'org.sonarqube'
-
 buildscript {
     repositories {
         jcenter {
@@ -21,6 +15,11 @@ buildscript {
         classpath "org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:2.0.1"
     }
 }
+
+apply plugin: 'java'
+apply plugin: 'jacoco'
+apply plugin: 'checkstyle'
+apply plugin: 'com.github.kt3k.coveralls'
 
 repositories {
     mavenLocal()
